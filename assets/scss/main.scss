@@ -1,0 +1,99 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('../fonts/stylesheet.css');
+
+@import "utils/components";
+@import "utils/swiper";
+@import "utils/blocks";
+@import "utils/swiper-bundle";
+@import "../../node_modules/vue-multiselect/dist/vue-multiselect.min.css";
+
+body {
+    
+    @apply font-kia text-base text-dark bg-white overflow-x-hidden;
+
+    &.is-loading {
+        
+        @apply overflow-y-hidden;
+    }
+}
+
+.select {
+
+    .multiselect {
+
+        
+        &__tags {
+            display: flex;
+            align-items: center;
+            border: none;
+            padding: 0 20px 0 0;
+            cursor: pointer;
+        }
+        &__placeholder {
+            margin: 0;
+            padding: 0;
+            font-size: 15px;
+            font-weight: 400;
+            color: #05141f;
+            letter-spacing: .001em;
+        }
+        &__select {
+            width: 15px;
+            height: 15px;
+            position:absolute;
+            top: 40%;
+            right: 0;
+            padding: 0;
+            margin: 0;
+            background: url('~static/images/svg/arrow-right.svg') no-repeat 50%;
+            transform: rotate(90deg);
+            color: #05141f;
+            &::before {
+                display: none;
+            }
+        }
+        &__single {
+            padding: 12px 0;
+            margin: 0;
+            color: #05141f;
+        }
+        &--active {
+            .multiselect__select {
+                transform: rotate(270deg);
+            }
+           
+        }
+        &__content-wrapper {
+            @apply py-[5px] border-[rgba(5,20,31,.3)]  bg-white;
+            border: 1px solid;
+            border-radius: 0;
+            
+            ul {
+                li {
+                    font-size: 15px;
+                    font-weight: 400;
+                    line-height: 1;
+                    color: #05141f;
+                    letter-spacing: .001em;
+                    margin: 0;
+                    padding: 0;
+                    list-style: none;
+                    &:hover {
+                        @apply bg-lgray;
+                    }
+                    .multiselect__option {
+                        padding: 5px 30px;
+                        min-height: 0;
+                        line-height: 20px;
+                        background-color: transparent!important;
+                        color: #05141f!important;
+                        white-space: normal;
+                    }
+                }
+            }
+        }
+    }
+}

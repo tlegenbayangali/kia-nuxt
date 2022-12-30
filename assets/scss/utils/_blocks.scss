@@ -1,0 +1,51 @@
+// Block bg-video
+
+.youtube-overlay {
+
+    &-icon {
+        transition: .1s all ease;
+    }
+
+    &:hover {
+        .youtube-overlay-icon {
+            transition: .1s all ease;
+            width: 80px;
+            height: 80px;
+        }
+    }
+}
+
+// Block carousel
+
+.slider-navigation {
+    .block-arrow-prev {
+        left: 40px;
+    }
+    .block-arrow-next {
+        right: 40px;
+    }
+}
+
+
+.swiper-pagination-slider-block.swiper-pagination-clickable.swiper-pagination-bullets {
+    margin-top: 10px;
+}
+
+.swiper-pagination-slider-block.swiper-pagination-clickable .swiper-pagination-bullet {
+    margin-right: 10px;
+    width: 40px;
+    position: relative;
+    height: 2px;
+    border-radius: 0;
+    opacity: .2;
+    background-color: gray;
+    &:last-child {
+        margin-right: 0;
+    }
+    &.swiper-pagination-bullet-active{
+        background-color: #05141F;
+        opacity: 1;
+    }
+}
+
+

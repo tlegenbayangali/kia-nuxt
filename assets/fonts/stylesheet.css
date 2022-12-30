@@ -1,0 +1,36 @@
+@font-face {
+    font-family: 'KIA';
+    src: url('hinted-KiaSignatureBold.eot');
+    src: url('hinted-KiaSignatureBold.eot?#iefix') format('embedded-opentype'),
+        url('hinted-KiaSignatureBold.woff2') format('woff2'),
+        url('hinted-KiaSignatureBold.woff') format('woff'),
+        url('hinted-KiaSignatureBold.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'KIA';
+    src: url('hinted-KiaSignatureRegular.eot');
+    src: url('hinted-KiaSignatureRegular.eot?#iefix') format('embedded-opentype'),
+        url('hinted-KiaSignatureRegular.woff2') format('woff2'),
+        url('hinted-KiaSignatureRegular.woff') format('woff'),
+        url('hinted-KiaSignatureRegular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'KIA';
+    src: url('hinted-KiaSignatureLight.eot');
+    src: url('hinted-KiaSignatureLight.eot?#iefix') format('embedded-opentype'),
+        url('hinted-KiaSignatureLight.woff2') format('woff2'),
+        url('hinted-KiaSignatureLight.woff') format('woff'),
+        url('hinted-KiaSignatureLight.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
