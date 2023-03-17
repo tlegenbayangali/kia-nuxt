@@ -146,17 +146,17 @@
             <client-only>
               <dalacodeSlider className="models-container" ref="modelSlider">
                 <div
-                  v-for="model in filterdModels"
+                  v-for="model in filteredModels"
                   :key="model.id"
                   class="swiper-slide flex flex-col justify-between model w-[265px] cursor-pointer"
                   :data-option="model.slug"
                 >
                   <div class="top mb-[10px]">
                     <div class="img">
-                      <nuxt-link to="#">
+                      <nuxt-link to="#" v-if="model.thumb.length">
                         <img
                           class="w-[265px]"
-                          src="https://kia-altyncar.kz/wp-content/webp-express/webp-images/uploads/2021/03/picanto-2-768x375.png.webp"
+                          :src="model.thumb"
                           :alt="model.name"
                         />
                       </nuxt-link>
@@ -491,16 +491,6 @@ export default {
           text: "Баллы за покупку товаров, работ и услуг и оплачивать ими последующие покупки",
         },
       ],
-      modelsName: [
-        { name: "Picanto" },
-        { name: "Rio" },
-        { name: "Ceed" },
-        { name: "K5" },
-        { name: "Sportage" },
-        { name: "Sorento" },
-        { name: "K9" },
-        { name: "Soul" },
-      ],
     };
   },
   methods: {
@@ -521,32 +511,44 @@ export default {
       });
     },
     selectValue() {
-      return this.model.name;
+      return this.model;
     },
   },
   computed: {
-    filterdModels() {
+    filteredModels() {
       if (process.client) {
         dalacodeSlider.methods.dalacodeSlider();
       }
-      if (this.selectValue() == "Все модели") {
+
+      if (this.selectValue().slug == "all") {
         return this.models;
       }
 
       if (this.selectValue()) {
         return this.models.filter((item) => {
-          return item.name == this.selectValue();
+          console.log(item);
+          return item.slug == this.selectValue().slug;
         });
       }
 
       return this.models;
     },
-  },
-  mounted() {
-    this.modelsName.unshift({
-      name: "Все модели",
-    });
-    this.heroSlider();
+
+    modelsName() {
+      const modelNames = [];
+      modelNames.push({
+        name: "Все модели",
+        slug: "all",
+      });
+      this.models.map((model) => {
+        modelNames.push({
+          name: model.title,
+          slug: model.slug,
+        });
+      });
+      console.log(modelNames);
+      return modelNames;
+    },
   },
 };
 </script>
