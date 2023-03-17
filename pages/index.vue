@@ -115,7 +115,7 @@
       <div>
         <div class="container">
           <div class="models-top">
-            <h1 class="section-heading">Модельный ряд</h1>
+            <h1 class="section-heading">{{ $t("models") }}</h1>
           </div>
           <client-only>
             <div
@@ -128,11 +128,12 @@
                 label="name"
                 selectLabel=""
                 deselectLabel=""
-                selectedLabel=""
+                :selectedLabel="$t('selected')"
                 :allow-empty="false"
-                placeholder="Все модели"
+                :placeholder="$t('select model')"
                 :options="modelsName"
                 :searchable="false"
+                value="all"
               >
                 <template slot="singleLabel" slot-scope="{ option }">
                   {{ option.name }}
@@ -526,7 +527,6 @@ export default {
 
       if (this.selectValue()) {
         return this.models.filter((item) => {
-          console.log(item);
           return item.slug == this.selectValue().slug;
         });
       }
@@ -536,17 +536,18 @@ export default {
 
     modelsName() {
       const modelNames = [];
-      modelNames.push({
-        name: "Все модели",
+      const placeholder = {
+        name: this.$i18n.t("select model"),
         slug: "all",
-      });
+      };
+      modelNames.push(placeholder);
+      this.model = placeholder;
       this.models.map((model) => {
         modelNames.push({
           name: model.title,
           slug: model.slug,
         });
       });
-      console.log(modelNames);
       return modelNames;
     },
   },
