@@ -4,13 +4,14 @@
       <div class="relative hero-slider-container overflow-hidden">
         <div class="swiper-wrapper">
           <div
-            class="swiper-slide"
-            v-for="(heroSlide, idx) in heroSlides"
-            :key="idx"
+              class="swiper-slide"
+              v-for="(heroSlide, idx) in heroSlides"
+              :key="idx"
           >
+            22
             <div
-              class="relative text-white"
-              :class="[
+                class="relative text-white"
+                :class="[
                 {
                   'hero-slider-item-left': heroSlide['side'] == 'left',
                   'hero-slider-item-right': heroSlide['side'] == 'right',
@@ -19,33 +20,33 @@
             >
               <div class="img w-full">
                 <img
-                  class="w-full object-cover h-full"
-                  :src="heroSlide['image']"
-                  alt=""
+                    class="w-full object-cover h-full"
+                    :src="heroSlide['image']"
+                    alt=""
                 />
               </div>
               <div
-                :class="[
+                  :class="[
                   {
                     'xl:items-end': heroSlide['side'] == 'right',
                   },
                 ]"
-                class="relative xl:absolute h-full w-full top-0 left-0 py-5 px-3.5 xl:py-[50px] xl:px-[160px] z-[2] flex justify-between flex-col"
+                  class="relative xl:absolute h-full w-full top-0 left-0 py-5 px-3.5 xl:py-[50px] xl:px-[160px] z-[2] flex justify-between flex-col"
               >
                 <div
-                  :class="[
+                    :class="[
                     {
                       'xl:flex xl:flex-col xl:items-end':
                         heroSlide['side'] == 'right',
                     },
                   ]"
-                  class="info-top"
+                    class="info-top"
                 >
                   <div class="slider-heading mb-5 text-5xl font-bold">
                     {{ heroSlide["title"] }}
                   </div>
                   <span
-                    class="slider-description text-lg inline-block mb-10 xl:mb-0"
+                      class="slider-description text-lg inline-block mb-10 xl:mb-0"
                   >
                     {{ heroSlide["text"] }}
                   </span>
@@ -53,11 +54,11 @@
                 <div class="info-bottom">
                   <div class="btn-wrapper btn-wrapper-lg btn-wrapper-white">
                     <Button
-                      btnWrapperSize="lg"
-                      btnWrapperType="white"
-                      v-if="heroSlide['button']['visible']"
-                      :btnHref="heroSlide['button']['to']"
-                      :btnText="heroSlide['button']['title']"
+                        btnWrapperSize="lg"
+                        btnWrapperType="white"
+                        v-if="heroSlide['button']['visible']"
+                        :btnHref="heroSlide['button']['to']"
+                        :btnText="heroSlide['button']['title']"
                     />
                   </div>
                 </div>
@@ -70,47 +71,46 @@
 
         <div class="navigation hidden xl:block">
           <button
-            class="left-[80px] arrow arrow-prev swiper-button-prev hero-arrow-prev hidden xl:block"
+              class="left-[80px] arrow arrow-prev swiper-button-prev hero-arrow-prev hidden xl:block"
           >
             <svg
-              width="21"
-              height="20"
-              viewBox="0 0 21 20"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-              preserveAspectRatio="xMidYMid"
-              class=""
+                width="21"
+                height="20"
+                viewBox="0 0 21 20"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+                preserveAspectRatio="xMidYMid"
+                class=""
             >
               <path
-                d="M8 4l-6 6 6 6M2.5 10H21"
-                stroke="currentColor"
-                stroke-width="1.5"
+                  d="M8 4l-6 6 6 6M2.5 10H21"
+                  stroke="currentColor"
+                  stroke-width="1.5"
               ></path>
             </svg>
           </button>
           <button
-            class="right-[80px] arrow arrow-next swiper-button-next hero-arrow-next hidden xl:block"
+              class="right-[80px] arrow arrow-next swiper-button-next hero-arrow-next hidden xl:block"
           >
             <svg
-              width="21"
-              height="20"
-              viewBox="0 0 21 20"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-              preserveAspectRatio="xMidYMid"
-              class=""
+                width="21"
+                height="20"
+                viewBox="0 0 21 20"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+                preserveAspectRatio="xMidYMid"
+                class=""
             >
               <path
-                d="M13 16l6-6-6-6M18.5 10H0"
-                stroke="currentColor"
-                stroke-width="1.5"
+                  d="M13 16l6-6-6-6M18.5 10H0"
+                  stroke="currentColor"
+                  stroke-width="1.5"
               ></path>
             </svg>
           </button>
         </div>
       </div>
     </div>
-
     <section class="models w-full py-20">
       <div>
         <div class="container">
@@ -119,21 +119,21 @@
           </div>
           <client-only>
             <div
-              class="select max-w-[300px] md:max-w-[400px] mb-[40px] border-b border-[rgba(5,20,31,.3)]"
+                class="select max-w-[300px] md:max-w-[400px] mb-[40px] border-b border-[rgba(5,20,31,.3)]"
             >
               <MultiSelect
-                @select="selectValue()"
-                v-model="model"
-                track-by="name"
-                label="name"
-                selectLabel=""
-                deselectLabel=""
-                :selectedLabel="$t('selected')"
-                :allow-empty="false"
-                :placeholder="$t('select model')"
-                :options="modelsName"
-                :searchable="false"
-                value="all"
+                  @select="selectValue()"
+                  v-model="model"
+                  track-by="name"
+                  label="name"
+                  selectLabel=""
+                  deselectLabel=""
+                  :selectedLabel="$t('selected')"
+                  :allow-empty="false"
+                  :placeholder="$t('select model')"
+                  :options="modelsName"
+                  :searchable="false"
+                  value="all"
               >
                 <template slot="singleLabel" slot-scope="{ option }">
                   {{ option.name }}
@@ -147,18 +147,18 @@
             <client-only>
               <dalacodeSlider className="models-container" ref="modelSlider">
                 <div
-                  v-for="model in filteredModels"
-                  :key="model.id"
-                  class="swiper-slide flex flex-col justify-between model w-[265px] cursor-pointer"
-                  :data-option="model.slug"
+                    v-for="model in filteredModels"
+                    :key="model.id"
+                    class="swiper-slide flex flex-col justify-between model w-[265px] cursor-pointer"
+                    :data-option="model.slug"
                 >
                   <div class="top mb-[10px]">
                     <div class="img">
                       <nuxt-link to="#" v-if="model.thumb.length">
                         <img
-                          class="w-[265px]"
-                          :src="model.thumb"
-                          :alt="model.name"
+                            class="w-[265px]"
+                            :src="model.thumb"
+                            :alt="model.name"
                         />
                       </nuxt-link>
                     </div>
@@ -166,21 +166,21 @@
                       <div class="flex">
                         <nuxt-link to="#">
                           <span
-                            class="mr-2.5 font-bold text-lg relative hover_line"
-                            >{{ model.name }}</span
+                              class="mr-2.5 font-bold text-lg relative hover_line"
+                          >{{ model.name }}</span
                           >
                         </nuxt-link>
                         <span
-                          v-show="true"
-                          class="bg-green py-[2px] px-[7px] text-white inline-block"
-                          >Новинка</span
+                            v-show="true"
+                            class="bg-green py-[2px] px-[7px] text-white inline-block"
+                        >Новинка</span
                         >
                       </div>
                     </div>
                     <div class="model-row">
                       <div class="d-flex">
                         <span class="mr-[10px] price-sm text-base"
-                          >от 10 000 000 ₸</span
+                        >от 10 000 000 ₸</span
                         >
                       </div>
                     </div>
@@ -207,22 +207,23 @@
         <div>
           <h4 class="section-heading">Онлайн сервисы</h4>
           <client-only
-            ><dalacodeSlider>
+          >
+            <dalacodeSlider>
               <div
-                v-for="(onlineService, idx) in onlineServices"
-                :key="idx"
-                class="swiper-slide bg-pattensBlue flex flex-col justify-between service-item"
+                  v-for="(onlineService, idx) in onlineServices"
+                  :key="idx"
+                  class="swiper-slide bg-pattensBlue flex flex-col justify-between service-item"
               >
                 <nuxt-link
-                  :to="onlineService['to']"
-                  class="p-2.5 flex items-center"
+                    :to="onlineService['to']"
+                    class="p-2.5 flex items-center"
                 >
                   <span class="mr-5">
                     <img
-                      width="50px"
-                      height="50px"
-                      :src="onlineService['icon']"
-                      alt=""
+                        width="50px"
+                        height="50px"
+                        :src="onlineService['icon']"
+                        alt=""
                     />
                   </span>
                   <span class="text-lg text-dark font-normal">
@@ -245,18 +246,18 @@
           <client-only>
             <dalacodeSlider className="grid">
               <div
-                v-for="(offerCar, idx) in offerCars"
-                v-show="offerCar['isShow']"
-                :key="idx"
-                class="swiper-slide bg-lgray flex flex-col justify-between model"
+                  v-for="(offerCar, idx) in offerCars"
+                  v-show="offerCar['isShow']"
+                  :key="idx"
+                  class="swiper-slide bg-lgray flex flex-col justify-between model"
               >
                 <div class="offers-card w-full">
                   <div class="img">
                     <nuxt-link :to="offerCar['to']">
                       <img
-                        class="h-[190px] w-full object-cover"
-                        :src="offerCar['image']"
-                        :alt="offerCar['title']"
+                          class="h-[190px] w-full object-cover"
+                          :src="offerCar['image']"
+                          :alt="offerCar['title']"
                       />
                     </nuxt-link>
                   </div>
@@ -264,7 +265,7 @@
                     <div class="flex flex-col">
                       <nuxt-link :to="offerCar['to']">
                         <span
-                          class="mr-2.7 underlined-black text-base font-bold"
+                            class="mr-2.7 underlined-black text-base font-bold"
                         >
                           {{ offerCar["title"] }}
                         </span>
@@ -286,10 +287,10 @@
       <div class="container mt-10">
         <div class="flex">
           <Button
-            btnWrapperSize="lg"
-            btnWrapperType="black"
-            btnHref="#"
-            btnText="Все предложения"
+              btnWrapperSize="lg"
+              btnWrapperType="black"
+              btnHref="#"
+              btnText="Все предложения"
           />
         </div>
       </div>
@@ -300,12 +301,12 @@
         <client-only>
           <Form class="flex flex-col gap-5" title="Закажите звонок">
             <div class="flex gap-10">
-              <Input title="Имя *" />
-              <Input title="Телефон *" mask="+# (###) ### ##-##" />
+              <Input title="Имя *"/>
+              <Input title="Телефон *" mask="+# (###) ### ##-##"/>
             </div>
             <div>
               <div class="flex gap-10">
-                <CustomSelect :lists="questions" />
+                <CustomSelect :lists="questions"/>
                 <div class="flex basis-1/2"></div>
               </div>
             </div>
@@ -315,20 +316,20 @@
               </div>
               <div class="text-base">
                 <a class="default-line" href="tell:+74954077977"
-                  >+7 (495) 407-79-77</a
+                >+7 (495) 407-79-77</a
                 >
               </div>
             </div>
             <div class="separator separator-sm"></div>
             <div class="flex flex-col gap-10">
-              <Checkbox id="agree" />
-              <Checkbox id="advertising" />
+              <Checkbox id="agree"/>
+              <Checkbox id="advertising"/>
             </div>
             <Button
-              :isLink="false"
-              btnWrapperSize="xl"
-              btnWrapperType="black"
-              btnText="Отправить заявку"
+                :isLink="false"
+                btnWrapperSize="xl"
+                btnWrapperType="black"
+                btnText="Отправить заявку"
             />
           </Form>
         </client-only>
@@ -338,7 +339,7 @@
 </template>
 
 <script>
-import { Swiper } from "swiper/bundle";
+import {Swiper} from "swiper/bundle";
 import Button from "~/components/FormElements/Button.vue";
 import Input from "~/components/FormElements/Input.vue";
 import Checkbox from "~/components/FormElements/Checkbox.vue";
@@ -351,8 +352,8 @@ export default {
   head: {
     title: "Главная страница",
     meta: [
-      { charset: "utf-8" },
-      { name: "viewport", content: "width=device-width, initial-scale=1" },
+      {charset: "utf-8"},
+      {name: "viewport", content: "width=device-width, initial-scale=1"},
       {
         hid: "description",
         name: "description",
@@ -368,11 +369,12 @@ export default {
     CustomSelect,
     Checkbox,
   },
-  async asyncData({ $axios }) {
+  async asyncData({$axios}) {
     const models = await $axios
-      .get("http://localhost:8000/api/cars/models")
-      .then((response) => response.data);
-    return { models };
+        .get("http://localhost:8000/api/cars/models")
+        .then((response) => response.data);
+
+    return {models};
   },
   data() {
     return {
@@ -396,7 +398,7 @@ export default {
           title: "K5",
           text: "K5 Text",
           image:
-            "https://kia-altyncar.kz/wp-content/uploads/2022/06/k5-nash.jpg",
+              "https://kia-altyncar.kz/wp-content/uploads/2022/06/k5-nash.jpg",
           side: "left",
           button: {
             visible: true,
@@ -408,7 +410,7 @@ export default {
           title: "Seltos",
           text: "Seltos lorem lorem lorem lorem lorem lorem lorem",
           image:
-            "https://kia-altyncar.kz/wp-content/uploads/2022/06/k5-nash.jpg",
+              "https://kia-altyncar.kz/wp-content/uploads/2022/06/k5-nash.jpg",
           side: "right",
           button: {
             visible: true,
@@ -597,6 +599,7 @@ export default {
     }
   }
 }
+
 .hero-model {
   &::after {
     content: "";
@@ -608,10 +611,10 @@ export default {
     left: 0;
     background: #000;
     background: linear-gradient(
-      180deg,
-      rgba(0, 0, 0, 0) 0,
-      rgba(0, 0, 0, 0) 45%,
-      #000 100%
+            180deg,
+            rgba(0, 0, 0, 0) 0,
+            rgba(0, 0, 0, 0) 45%,
+            #000 100%
     );
   }
 
@@ -626,9 +629,9 @@ export default {
 
     &::after {
       background: linear-gradient(
-        180deg,
-        rgba(#05141f, 0) 80%,
-        rgba(#05141f, 1) 100%
+              180deg,
+              rgba(#05141f, 0) 80%,
+              rgba(#05141f, 1) 100%
       );
     }
 
