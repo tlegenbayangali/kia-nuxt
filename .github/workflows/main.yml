@@ -2,12 +2,14 @@ name: CI Nuxt app
 
 on:
   push:
-    branches: ['main']
+    branches:
+      - main
   pull_request:
-    branches: ['main']
+    branches:
+      - main
 
 jobs:
-  build:
+  prepare:
     runs-on: self-hosted
     steps:
       - name: Checkout
@@ -17,3 +19,12 @@ jobs:
           cp -fR ./* /var/www/630.kz
           echo 'Copying is done'
           cd /var/www/630.kz
+
+  build:
+    runs-on: self-hosted
+    needs: prepare
+    steps:
+      - name: Install deps
+        run: npm install
+      - name: Build app
+        run: npm run build
