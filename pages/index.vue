@@ -8,7 +8,6 @@
               v-for="(heroSlide, idx) in heroSlides"
               :key="idx"
           >
-            22
             <div
                 class="relative text-white"
                 :class="[
