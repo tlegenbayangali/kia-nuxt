@@ -1,4 +1,4 @@
-name: "CI Nuxt app"
+name: 'CI Nuxt app'
 
 on:
   push:
@@ -9,7 +9,6 @@ on:
 jobs:
   build:
     runs-on: self-hosted
-
     steps:
       - name: Checkout
         uses: actions/checkout@v2
@@ -19,6 +18,3 @@ jobs:
           echo 'Copying is done'
           cd /var/www/630.kz
           npm run build
-
-
-  
