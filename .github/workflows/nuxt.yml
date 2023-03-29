@@ -1,4 +1,4 @@
-name: 'Nuxt workflow'
+name: Nuxt workflow
 
 on:
   push:

@@ -1,4 +1,4 @@
-name: 'CI Nuxt app'
+name: CI Nuxt app
 
 on:
   push:
