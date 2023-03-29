@@ -15,7 +15,7 @@ jobs:
         uses: actions/checkout@v2
       - name: Copy files to public folder
         run: |
-          cp ./* /var/www/630.kz
+          cp ./kia-nuxt/kia-nuxt/kia-nuxt /var/www/630.kz
           echo 'Copying is done'
 
 
