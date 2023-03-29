@@ -14,7 +14,6 @@ jobs:
         uses: actions/checkout@v2
       - name: Copy files to public folder
         run: |
-          npm run build
           cp -fR ./* /var/www/630.kz
           echo 'Copying is done'
           cd /var/www/630.kz

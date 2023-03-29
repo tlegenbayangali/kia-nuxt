@@ -1,0 +1,16 @@
+name: 'Nuxt workflow'
+
+on:
+  push:
+    branches: ['main']
+  pull_request:
+    branches: ['main']
+
+jobs:
+  build:
+    runs-on: self-hosted
+    steps:
+      - name: Install deps
+        run: npm install
+      - name: Build app
+        run: npm run build
