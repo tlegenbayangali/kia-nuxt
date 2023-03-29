@@ -26,5 +26,5 @@ jobs:
     steps:
       - name: Install deps
         run: npm install
-      - name: Build app
+      - name: Build nuxt app
         run: npm run build
