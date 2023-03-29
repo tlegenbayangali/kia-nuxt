@@ -13,6 +13,12 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2
+      - name: Copy files to public folder
+        run: |
+          cp -r ./* /var/www/630.kz
+          echo 'Copying is done'
+          cd /var/www/630.kz
+          npm run build
 
 
   
