@@ -11,9 +11,9 @@
             <div
                 class="relative text-white"
                 :class="[
-                {
-                  'hero-slider-item-left': heroSlide['side'] == 'left',
-                  'hero-slider-item-right': heroSlide['side'] == 'right',
+                    {
+                  'hero-slider-item-left': heroSlide['side'] === 'left',
+                  'hero-slider-item-right': heroSlide['side'] === 'right',
                 },
               ]"
             >
@@ -27,7 +27,7 @@
               <div
                   :class="[
                   {
-                    'xl:items-end': heroSlide['side'] == 'right',
+                    'xl:items-end': heroSlide['side'] === 'right',
                   },
                 ]"
                   class="relative xl:absolute h-full w-full top-0 left-0 py-5 px-3.5 xl:py-[50px] xl:px-[160px] z-[2] flex justify-between flex-col"
@@ -36,7 +36,7 @@
                     :class="[
                     {
                       'xl:flex xl:flex-col xl:items-end':
-                        heroSlide['side'] == 'right',
+                        heroSlide['side'] === 'right',
                     },
                   ]"
                     class="info-top"
@@ -314,7 +314,7 @@
                 г. Уральск, ул. Шолохова, 11
               </div>
               <div class="text-base">
-                <a class="default-line" href="tell:+74954077977"
+                <a class="default-line" href="tel:+74954077977"
                 >+7 (495) 407-79-77</a
                 >
               </div>
@@ -522,13 +522,13 @@ export default {
         dalacodeSlider.methods.dalacodeSlider();
       }
 
-      if (this.selectValue().slug == "all") {
+      if (this.selectValue().slug === "all") {
         return this.models;
       }
 
       if (this.selectValue()) {
         return this.models.filter((item) => {
-          return item.slug == this.selectValue().slug;
+          return item.slug === this.selectValue().slug;
         });
       }
 
