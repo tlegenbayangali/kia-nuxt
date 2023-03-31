@@ -25,7 +25,7 @@ jobs:
     needs: prepare
     steps:
       - name: Install deps
-        run: npm install
+        run: npm ci
       - name: Build nuxt app
         run: npm run build
       - name: Start pm2
